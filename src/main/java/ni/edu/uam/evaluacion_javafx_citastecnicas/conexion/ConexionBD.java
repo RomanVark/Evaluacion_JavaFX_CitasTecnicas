@@ -6,8 +6,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public final class ConexionDB {
-    private ConexionDB() {}
+public final class ConexionBD {
+    private ConexionBD() {}
 
     private static String entorno(String clave, String defecto) {
         String valor = System.getenv(clave);

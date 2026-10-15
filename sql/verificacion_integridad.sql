@@ -37,7 +37,7 @@ DO $$
         BEGIN
             DELETE FROM cliente WHERE id=cliente_prueba;
             RAISE EXCEPTION 'ERROR: FK permitió eliminar un cliente con citas';
-        EXCEPTION WHEN foreign_key_violation THEN
+        EXCEPTION WHEN foreign_key_violation OR restrict_violation THEN
             RAISE NOTICE 'OK: la FK impide eliminar un cliente con citas';
         END;
 
