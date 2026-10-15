@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ni.edu.uam.evaluacion_javafx_citastecnicas.controlador.CitaTecnicaController">
+    <top>
+        <VBox spacing="11">
+            <Label text="Gestión de citas técnicas" styleClass="section-title" />
+            <GridPane hgap="12" vgap="9">
+                <Label text="Cliente *" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <ComboBox fx:id="cmbCliente" promptText="Selecciona un cliente" prefWidth="285"
+                          GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Label text="Fecha *" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                <DatePicker fx:id="dpFecha" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                <Label text="Hora *" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <TextField fx:id="txtHora" promptText="09:30 (24 h)"
+                           GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label text="Estado *" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <ComboBox fx:id="cmbEstado" prefWidth="210"
+                          GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                <Label text="Servicio *" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <TextField fx:id="txtServicio" promptText="Diagnóstico, mantenimiento..."
+                           GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Label text="Descripción *" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                <TextArea fx:id="txtDescripcion" promptText="Detalle de la solicitud"
+                          prefHeight="76" prefWidth="235" wrapText="true"
+                          GridPane.columnIndex="3" GridPane.rowIndex="2" />
+            </GridPane>
+            <HBox spacing="9">
+                <Button text="Guardar" onAction="#guardar" styleClass="primary-button" />
+                <Button text="Actualizar" onAction="#actualizar" />
+                <Button text="Eliminar" onAction="#eliminar" styleClass="danger-button" />
+                <Button text="Limpiar formulario" onAction="#limpiarFormulario" />
+            </HBox>
+            <Separator />
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Estado:" />
+                <ComboBox fx:id="filtroEstado" prefWidth="145" />
+                <Label text="Fecha:" />
+                <DatePicker fx:id="filtroFecha" promptText="Cualquier fecha" />
+                <Button text="Aplicar filtros" onAction="#aplicarFiltros" />
+                <Button text="Limpiar filtros" onAction="#limpiarFiltros" />
+            </HBox>
+        </VBox>
+    </top>
+    <center>
+        <TableView fx:id="tablaCitas" prefHeight="420">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="56" />
+                <TableColumn fx:id="colCliente" text="Cliente" prefWidth="224" />
+                <TableColumn fx:id="colFecha" text="Fecha" prefWidth="110" />
+                <TableColumn fx:id="colHora" text="Hora" prefWidth="95" />
+                <TableColumn fx:id="colServicio" text="Tipo de servicio" prefWidth="240" />
+                <TableColumn fx:id="colEstado" text="Estado" prefWidth="150" />
+            </columns>
+        </TableView>
+    </center>
+</BorderPane>
