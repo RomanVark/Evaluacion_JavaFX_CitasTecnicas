@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ni.edu.uam.evaluacion_javafx_citastecnicas.controlador.ClienteController">
+    <top>
+        <VBox spacing="12">
+            <Label text="Administración de clientes" styleClass="section-title" />
+            <GridPane hgap="12" vgap="9">
+                <Label text="Nombres *" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <TextField fx:id="txtNombres" promptText="Nombre del cliente" prefWidth="240"
+                           GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <Label text="Apellidos *" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                <TextField fx:id="txtApellidos" promptText="Apellidos" prefWidth="240"
+                           GridPane.columnIndex="3" GridPane.rowIndex="0" />
+                <Label text="Teléfono *" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <TextField fx:id="txtTelefono" promptText="8888-8888"
+                           GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label text="Correo *" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <TextField fx:id="txtCorreo" promptText="usuario@correo.com"
+                           GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                <CheckBox fx:id="chkActivo" text="Cliente activo" selected="true"
+                          GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            </GridPane>
+            <HBox spacing="9">
+                <Button text="Guardar" onAction="#guardar" styleClass="primary-button" />
+                <Button text="Actualizar" onAction="#actualizar" />
+                <Button text="Eliminar" onAction="#eliminar" styleClass="danger-button" />
+                <Button text="Limpiar formulario" onAction="#limpiarFormulario" />
+            </HBox>
+            <Separator />
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="Buscar:" />
+                <TextField fx:id="txtBuscar" promptText="Nombre, apellido o correo..."
+                           prefWidth="360" onAction="#buscar" />
+                <Button text="Buscar" onAction="#buscar" />
+                <Button text="Limpiar búsqueda" onAction="#limpiarBusqueda" />
+            </HBox>
+        </VBox>
+    </top>
+    <center>
+        <TableView fx:id="tablaClientes" prefHeight="420" BorderPane.margin="0 0 0 0">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" prefWidth="60" />
+                <TableColumn fx:id="colNombres" text="Nombres" prefWidth="170" />
+                <TableColumn fx:id="colApellidos" text="Apellidos" prefWidth="170" />
+                <TableColumn fx:id="colTelefono" text="Teléfono" prefWidth="145" />
+                <TableColumn fx:id="colCorreo" text="Correo electrónico" prefWidth="270" />
+                <TableColumn fx:id="colActivo" text="Activo" prefWidth="100" />
+            </columns>
+        </TableView>
+    </center>
+</BorderPane>
