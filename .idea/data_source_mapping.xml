@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourcePerFileMappings">
+    <file url="file://$PROJECT_DIR$/sql/gestion_citas.sql" value="fb30179c-51d9-4afb-8997-8e50993e97ba" />
+    <file url="file://$PROJECT_DIR$/sql/verificacion_integridad.sql" value="fb30179c-51d9-4afb-8997-8e50993e97ba" />
+  </component>
+</project>

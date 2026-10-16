@@ -40,7 +40,7 @@
         </VBox>
     </top>
     <center>
-        <TableView fx:id="tablaClientes" prefHeight="420" BorderPane.margin="0 0 0 0">
+        <TableView fx:id="tablaClientes" prefHeight="420">
             <columns>
                 <TableColumn fx:id="colId" text="ID" prefWidth="60" />
                 <TableColumn fx:id="colNombres" text="Nombres" prefWidth="170" />
